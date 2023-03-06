@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block Title %}
+    {{Title}}
+{% endblock Title %}
+
+{% block pageTitle %}
+    {{Content}}
+{% endblock pageTitle %}
+
+{% block content %}
+    {% for post in Posts %}
+    <a href="{% url 'detail' post.Slug %}">
+        <h1>{{post.Title}}</h1>
+    </a>
+    <p>{{post.Published}}</p>
+    {% endfor %}
+{% endblock content %}
